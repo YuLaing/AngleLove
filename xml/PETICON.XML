@@ -1,7 +1,5 @@
 ﻿<?xml version="1.0"?>
 <root>
-	<INCLUDE file="setting\wnddef.xml"/>
-	<!-- 寵物頭像圖示 -->
 	<icon id="11501" pos="12,23" dir="\pet\" normal="p001" focus="normal" down="normal" disable="normal"/>
 	<icon id="11502" pos="12,23" dir="\pet\" normal="p002" focus="normal" down="normal" disable="normal"/>
 	<icon id="11503" pos="12,23" dir="\pet\" normal="p003" focus="normal" down="normal" disable="normal"/>

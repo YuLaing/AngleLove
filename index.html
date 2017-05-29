@@ -9,8 +9,10 @@
 <body>
 <h1>寵物</h1>
 
+<div class=""></div>
 
-	<script type="text/javascript">
+
+<script type="text/javascript">
 if (window.XMLHttpRequest)
   {// code for IE7+, Firefox, Chrome, Opera, Safari
   xmlhttp=new XMLHttpRequest();
@@ -23,12 +25,13 @@ else
 xmlhttp.open("GET","xml/PET.XML",false);
 xmlhttp.send();
 xmlDoc=xmlhttp.responseXML;	
+var x=xmlDoc.getElementsByTagName("pet");
 xmlhttp.open("GET","xml/PETICON.XML",false);
 xmlhttp.send();
 xmlDocicon=xmlhttp.responseXML;	
+var y=xmlDocicon.getElementsByTagName("icon");
 document.write("<table border='1'>");
-var x=xmlDoc.getElementsByTagName("pet");
-var y=xmlDoc.getElementsByTagName("icon");
+
 
   //document.body.appendChild(oImg);
  function img_create(src,alt,title){
@@ -38,10 +41,11 @@ var y=xmlDoc.getElementsByTagName("icon");
  	if(title!=null) img.title=title;
  	return img;
  }
+ //img_create("icon/Pet/1.bmp");
   //img_create("icon/Pet/1.bmp","","");
   //var img=document.createElement('img');
   //img.src='icon/pet/1.bmp';
-  //document.getElementById('container').append(img);
+  //document.getElementById('peticon_id').appendChild(img);
 //var oImg=document.createElement("img");
 //var oImg=new Image("img");
 //oImg.setAttribute('src','icon/Pet/1.bmp');
@@ -49,16 +53,42 @@ var y=xmlDoc.getElementsByTagName("icon");
 //oImg.setAttribute('width','100');
 //oImg.setAttribute('alt','');
 //document.body.appendChild(oImg);
-
+var petstr;
+var j=0;
+var i=0;
 for (i=0;i<x.length;i++)
   {
+
+  	var petstr;
   document.write("<tr><td>");
   document.write(x[i].getAttribute("編號"));
-  document.write("<tr><td>");
+  document.write("<tr class='peticon_id"+i+"'><td>");
   //oImg.setAttribute('src','icon/Pet/1.bmp');
   //document.body.appendChild(oImg);
-  document.write(x[i].getAttribute("頭像編號"));
-  
+  var img=document.createElement('img');
+  petstr1=document.write(x[i].getAttribute("頭像編號"));
+  //console.log('pet=',x[i].getAttribute("頭像編號"));
+  j=0;
+  for (j=0;j<y.length;j++)
+  {  //console.log('pet=',x[i].getAttribute("頭像編號"));
+     //console.log('pet=',y[i].getAttribute("id"));
+     var petstr;
+  	if(y[j].getAttribute("id")==x[i].getAttribute("頭像編號"))
+  	{
+      petstr=y[j].getAttribute("normal");
+     console.log('pet=',y[j].getAttribute("normal"));
+   }
+  }
+ 
+
+  //if(parseInt(petstr)<9) { petstr="00"+i;}
+  //else if (parseInt(petstr)<99) {petstr="0"+i;}
+  //else if (parseInt(petstr)<999) {petstr=i;}
+  img.src='icon/pet/'+petstr+'_1-1.bmp';
+  document.querySelector('.peticon_id'+i).appendChild(img);
+  //img.src='icon/pet/'+petstr+'-1.bmp';
+                                               
+  //document.getElementById('peticon_id').appendChild(img);
   document.write("</td><td>");
   document.write(x[i].getAttribute("名稱"));
   document.write("</td><td>");
@@ -83,6 +113,7 @@ for (i=0;i<x.length;i++)
   document.write("</td></tr>");
   }
 document.write("</table>");
+
 </script>
 <div class="res"></div>
 </body>
