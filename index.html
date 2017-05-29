@@ -76,8 +76,8 @@ for (i=0;i<x.length;i++)
    
   	if(y[j].getAttribute("id")==x[i].getAttribute("頭像編號"))
   	  { petstr=y[j].getAttribute("normal");
-        var fPath=xmlhttp.open("GET",'icon/Pet/'+petstr+'_1-1.bmp',false);
-        xmlhttp.open("GET","xml/PETICON.XML",false);
+        var fPath='icon/Pet/'+petstr+'_1-1.bmp';
+        xmlhttp.open("GET",fPath,false);
         xmlhttp.send();
         xmlDocicon=xmlhttp.responseXML;	
       	if(xmlhttp.readyState==4)
