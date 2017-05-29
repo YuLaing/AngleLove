@@ -56,19 +56,45 @@ document.write("<table border='1'>");
 var petstr;
 var j=0;
 var i=0;
+document.write("<tr><td>");
+document.write("編號");
+document.write("</td><td>");
+document.write("頭像編號");
+document.write("</td><td>");
+document.write("名稱");
+document.write("</td><td>");
+document.write("階段");
+  document.write("</td><td>");
+document.write("寵物類型");
+  document.write("</td><td>");
+document.write("系別");
+  document.write("</td><td>");
+document.write("經驗等級表");
+  document.write("</td><td>");
+document.write("升階變化1");
+  document.write("</td><td>");
+document.write("升階變化2");
+  document.write("</td><td>");
+document.write("條件成長值");
+  document.write("</td><td>");
+document.write("反應類別表");
+  document.write("</td><td>");
+document.write("移動速度");
+  document.write("</td></tr>");
 for (i=0;i<x.length;i++)
   {
-
-  	var petstr;
+  
+  var petstr;
   document.write("<tr><td>");
   document.write(x[i].getAttribute("編號"));
-  document.write("<tr class='peticon_id"+i+"'><td>");
+  document.write("<td class='peticon_id"+i+"'><td>");
   //oImg.setAttribute('src','icon/Pet/1.bmp');
   //document.body.appendChild(oImg);
   var img=document.createElement('img');
-  petstr1=document.write(x[i].getAttribute("頭像編號"));
+  //document.write(x[i].getAttribute("頭像編號"));
   //console.log('pet=',x[i].getAttribute("頭像編號"));
   j=0;
+
   for (j=0;j<y.length;j++)
   {  //console.log('pet=',x[i].getAttribute("頭像編號"));
      //console.log('pet=',y[i].getAttribute("id"));
@@ -94,7 +120,9 @@ for (i=0;i<x.length;i++)
   //img.src='icon/pet/'+petstr+'-1.bmp';
                                                
   //document.getElementById('peticon_id').appendChild(img);
-  document.write("</td><td>");
+  
+
+  //document.write("</td><td>");
   document.write(x[i].getAttribute("名稱"));
   document.write("</td><td>");
   document.write(x[i].getAttribute("階段"));
