@@ -75,22 +75,11 @@ for (i=0;i<x.length;i++)
      var petstr;
    
   	if(y[j].getAttribute("id")==x[i].getAttribute("頭像編號"))
-  	  { petstr=y[j].getAttribute("normal");
-        var fPath='icon/Pet/'+petstr+'_1-1.bmp';
-        xmlhttp.open("GET",fPath,false);
-        xmlhttp.send();
-        xmlDocicon=xmlhttp.responseXML;	
-      	if(xmlhttp.readyState==4)
-      	{
-      	if(xmlhttp.status==200) petstr=y[j].getAttribute("normal").toUpperCase();
-        else if (xmlhttp.status==404) petstr=y[j].getAttribute("normal").toUpperCase();
-      	}
-      	else
-      	{
-      	petstr=y[j].getAttribute("normal").toUpperCase();
-      	}
+  	  { petstr=y[j].getAttribute("normal").toUpperCase();
+        
+      
      
-      //petstr=petstr.toUpperCase();
+        //petstr=petstr.toUpperCase();
       }
      //console.log('pet=',y[j].getAttribute("normal"));
    
