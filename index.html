@@ -3,10 +3,87 @@
 <head>
 	<meta charset="UTF-8">
 	
-	<script src="js/object.js"></script>
+	
 	<title>Document</title>
 </head>
 <body>
-	<h1>123</h1>
+<h1>寵物</h1>
+
+
+	<script type="text/javascript">
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("GET","xml/Pet.xml",false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML;	
+xmlhttp.open("GET","xml/Peticon.xml",false);
+xmlhttp.send();
+xmlDocicon=xmlhttp.responseXML;	
+document.write("<table border='1'>");
+var x=xmlDoc.getElementsByTagName("pet");
+var y=xmlDoc.getElementsByTagName("icon");
+
+  //document.body.appendChild(oImg);
+ function img_create(src,alt,title){
+ 	var img=new img('img');
+ 	img.src=src;
+ 	if(alt!=null) img.alt=alt;
+ 	if(title!=null) img.title=title;
+ 	return img;
+ }
+  //img_create("icon/Pet/1.bmp","","");
+  //var img=document.createElement('img');
+  //img.src='icon/pet/1.bmp';
+  //document.getElementById('container').append(img);
+//var oImg=document.createElement("img");
+//var oImg=new Image("img");
+//oImg.setAttribute('src','icon/Pet/1.bmp');
+//oImg.setAttribute('height','100');
+//oImg.setAttribute('width','100');
+//oImg.setAttribute('alt','');
+//document.body.appendChild(oImg);
+
+for (i=0;i<x.length;i++)
+  {
+  document.write("<tr><td>");
+  document.write(x[i].getAttribute("編號"));
+  document.write("<tr><td>");
+  //oImg.setAttribute('src','icon/Pet/1.bmp');
+  //document.body.appendChild(oImg);
+  document.write(x[i].getAttribute("頭像編號"));
+  
+  document.write("</td><td>");
+  document.write(x[i].getAttribute("名稱"));
+  document.write("</td><td>");
+  document.write(x[i].getAttribute("階段"));
+  document.write("</td><td>");
+  document.write(x[i].getAttribute("寵物類型"));  
+  document.write("</td><td>");
+  document.write(x[i].getAttribute("系別")); 
+  document.write("</td><td>");
+  document.write(x[i].getAttribute("經驗等級表")); 
+  document.write("</td><td>");
+  document.write(x[i].getAttribute("升階變化1")); 
+  document.write("</td><td>");
+  document.write(x[i].getAttribute("升階變化2")); 
+  document.write("</td><td>");
+  document.write(x[i].getAttribute("條件成長值"));   
+  document.write("</td><td>");
+  document.write(x[i].getAttribute("反應類別表")); 
+  document.write("</td><td>");
+  document.write(x[i].getAttribute("移動速度")); 
+  //document.write(x[i].getElementsByTagName("pet")[0].childNodes[0].nodeValue);
+  document.write("</td></tr>");
+  }
+document.write("</table>");
+</script>
+<div class="res"></div>
 </body>
 </html>
