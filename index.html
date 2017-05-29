@@ -82,8 +82,8 @@ for (i=0;i<x.length;i++)
         xmlDocicon=xmlhttp.responseXML;	
       	if(xmlhttp.readyState==4)
       	{
-      	if(xmlhttp.status==200)
-      	petstr=y[j].getAttribute("normal");
+      	if(xmlhttp.status==200) petstr=y[j].getAttribute("normal");
+        else if (xmlhttp.status==404) petstr=y[j].getAttribute("normal").toUpperCase();
       	}
       	else
       	{
