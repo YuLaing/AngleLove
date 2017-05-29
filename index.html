@@ -76,7 +76,7 @@ for (i=0;i<x.length;i++)
    
   	if(y[j].getAttribute("id")==x[i].getAttribute("頭像編號"))
   	  { petstr=y[j].getAttribute("normal");
-        var fPath=xmlhttp.open("GET",'icon/pet/'+petstr+'_1-1.bmp',false);
+        var fPath=xmlhttp.open("GET",'icon/Pet/'+petstr+'_1-1.bmp',false);
         xmlhttp.open("GET","xml/PETICON.XML",false);
         xmlhttp.send();
         xmlDocicon=xmlhttp.responseXML;	
@@ -100,7 +100,7 @@ for (i=0;i<x.length;i++)
   //if(parseInt(petstr)<9) { petstr="00"+i;}
   //else if (parseInt(petstr)<99) {petstr="0"+i;}
   //else if (parseInt(petstr)<999) {petstr=i;}
-  img.src='icon/pet/'+petstr+'_1-1.bmp';
+  img.src='icon/Pet/'+petstr+'_1-1.bmp';
   document.querySelector('.peticon_id'+i).appendChild(img);
   //img.src='icon/pet/'+petstr+'-1.bmp';
                                                
