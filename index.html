@@ -1,232 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	
-	
-	<title>Document</title>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/Anglelove.css">
 </head>
 <body>
-<h1>道具</h1>
-
-<div class=""></div>
-
-
-<script type="text/javascript">
-if (window.XMLHttpRequest)
-  {// code for IE7+, Firefox, Chrome, Opera, Safari
-  xmlhttp=new XMLHttpRequest();
-  }
-else
-  {// code for IE6, IE5
-  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
-
-xmlhttp.open("GET","xml/ITEM6.XML",false);
-xmlhttp.send();
-xmlDoc=xmlhttp.responseXML;	
-var x=xmlDoc.getElementsByTagName("道具");
-xmlhttp.open("GET","xml/ITEMICON.XML",false);
-xmlhttp.send();
-xmlDocicon=xmlhttp.responseXML;	
-var y=xmlDocicon.getElementsByTagName("icon");
-document.write("<table border='1'>");
-
-
-  //document.body.appendChild(oImg);
- function img_create(src,alt,title){
- 	var img=new img('img');
- 	img.src=src;
- 	if(alt!=null) img.alt=alt;
- 	if(title!=null) img.title=title;
- 	return img;
- }
- //img_create("icon/Pet/1.bmp");
-  //img_create("icon/Pet/1.bmp","","");
-  //var img=document.createElement('img');
-  //img.src='icon/pet/1.bmp';
-  //document.getElementById('peticon_id').appendChild(img);
-//var oImg=document.createElement("img");
-//var oImg=new Image("img");
-//oImg.setAttribute('src','icon/Pet/1.bmp');
-//oImg.setAttribute('height','100');
-//oImg.setAttribute('width','100');
-//oImg.setAttribute('alt','');
-//document.body.appendChild(oImg);
-var petstr;
-var j=0;
-var i=0;
-document.write("<tr><td>");
-document.write("編號");
-document.write("</td><td>");
-document.write("原型介面");
-document.write("</td><td>");
-document.write("原型外觀");
-document.write("</td><td>");
-document.write("發光外觀");
-  document.write("</td><td>");
-document.write("原型名稱");
-  document.write("</td><td>");
-document.write("基本名稱");
-  document.write("</td><td>");
-document.write("物品類別");
-  document.write("</td><td>");
-document.write("物品等級");
-  document.write("</td><td>");
-document.write("等級限制");
-  document.write("</td><td>");
-document.write("平均攻擊");
-  document.write("</td><td>");
-document.write("攻擊變數");
-  document.write("</td><td>");
-document.write("精準");
-  document.write("</td><td>");
-document.write("火焰攻擊");
-  document.write("</td><td>");
-document.write("攻擊速度");
-  document.write("</td><td>");
-document.write("攻擊範圍");
-  document.write("</td><td>");
-document.write("耐久");
-  document.write("</td><td>");
-document.write("常駐法術");
-  document.write("</td><td>");
-document.write("重量");
-  document.write("</td><td>");
-document.write("價格");
-  document.write("</td><td>");
-document.write("動態資料2");
-  document.write("</td><td>");
-document.write("綁定次數");
-  document.write("</td><td>");
-document.write("顏色");
-  document.write("</td><td>");
-document.write("log等級");
-  document.write("</td><td>");
-document.write("說明定義");
-  document.write("</td><td>");
-document.write("右手裝備");
-  document.write("</td><td>");
-document.write("左手裝備");
-  document.write("</td><td>");
-document.write("無組合變化");
-  document.write("</td><td>");
-document.write("裝備綁定");
-  document.write("</td><td>");
-document.write("抽中廣播");
-  document.write("</td><td>");
-document.write("指定組合變化");
-  document.write("</td><td>");
-document.write("兌換廣播");
-  document.write("</td></tr>");
-for (i=0;i<x.length;i++)
-  {
-  
-  var petstr;
-  document.write("<tr><td>");
-  document.write(x[i].getAttribute("編號"));
-  document.write("<td class='itemicon_id"+i+"'><td>");
-  //oImg.setAttribute('src','icon/Pet/1.bmp');
-  //document.body.appendChild(oImg);
-  var img=document.createElement('img');
-  //document.write(x[i].getAttribute("頭像編號"));
-  //console.log('pet=',x[i].getAttribute("頭像編號"));
-  j=0;
-
-  for (j=0;j<y.length;j++)
-  {  //console.log('pet=',x[i].getAttribute("頭像編號"));
-     //console.log('pet=',y[i].getAttribute("id"));
-     var itemstr;
-   
-  	if(y[j].getAttribute("id")==x[i].getAttribute("原型介面"))
-  	  { itemstr=y[j].getAttribute("normal").toUpperCase();
-        
-      
-     
-        //petstr=petstr.toUpperCase();
-      }
-     //console.log('pet=',y[j].getAttribute("normal"));
-   
-  }
- 
-
-  //if(parseInt(petstr)<9) { petstr="00"+i;}
-  //else if (parseInt(petstr)<99) {petstr="0"+i;}
-  //else if (parseInt(petstr)<999) {petstr=i;}
-  img.src='icon/item/'+itemstr+'_1-1.bmp';
-  document.querySelector('.itemicon_id'+i).appendChild(img);
-  //img.src='icon/pet/'+petstr+'-1.bmp';
-                                               
-  //document.getElementById('peticon_id').appendChild(img);
-  
-
-  //document.write("</td><td>");
-  document.write(x[i].getAttribute("原型外觀"));
-  document.write("</td><td>");
-  document.write(x[i].getAttribute("發光外觀"));
-  document.write("</td><td>");
-  document.write(x[i].getAttribute("原型名稱"));  
-  document.write("</td><td>");
-  document.write(x[i].getAttribute("基本名稱")); 
-  document.write("</td><td>");
-  document.write(x[i].getAttribute("物品類別")); 
-  document.write("</td><td>");
-  document.write(x[i].getAttribute("物品等級")); 
-  document.write("</td><td>");
-  document.write(x[i].getAttribute("等級限制")); 
-  document.write("</td><td>");
-  document.write(x[i].getAttribute("平均攻擊"));   
-  document.write("</td><td>");
-  document.write(x[i].getAttribute("攻擊變數")); 
-  document.write("</td><td>");
-  document.write(x[i].getAttribute("精準")); 
-  document.write("</td><td>");
-  document.write(x[i].getAttribute("火焰攻擊")); 
-  document.write("</td><td>");
-  document.write(x[i].getAttribute("攻擊速度")); 
-  document.write("</td><td>");
-  document.write(x[i].getAttribute("攻擊範圍")); 
-  document.write("</td><td>");
-  document.write(x[i].getAttribute("耐久")); 
-  document.write("</td><td>");
-  document.write(x[i].getAttribute("常駐法術"));
-  document.write("</td><td>");
-  document.write(x[i].getAttribute("重量"));
-  document.write("</td><td>");
-  document.write(x[i].getAttribute("價格"));
-  document.write("</td><td>");
-  document.write(x[i].getAttribute("動態資料2"));
-  document.write("</td><td>");
-  document.write(x[i].getAttribute("綁定次數"));
-  document.write("</td><td>");
-  function LoadNull(a){
-  	var a;
-  	var b;
-  	if (a==undefined) {b=0;}
-    else b=a;
-    return b;
-  }
-  document.write((x[i].getAttribute("顏色")));
-  document.write("</td><td>");
-  document.write((x[i].getAttribute("log等級")));
-  document.write("</td><td>");
-  document.write((x[i].getAttribute("說明定義")));
-  document.write("</td><td>");
-  document.write((x[i].getAttribute("右手裝備")));
-  document.write("</td><td>");
-  document.write((x[i].getAttribute("左手裝備")));
-  document.write("</td><td>");
-  document.write((x[i].getAttribute("無組合變化")));
-  document.write("</td><td>");
-  document.write((x[i].getAttribute("裝備綁定")));
-  document.write("</td><td>");
-  document.write((x[i].getAttribute("抽中廣播")));
-  //document.write(x[i].getElementsByTagName("pet")[0].childNodes[0].nodeValue);
-  document.write("</td></tr>");
-  }
-document.write("</table>");
-
-</script>
-<div class="res"></div>
+  <div class="wrap">
+    <div class="topmenu">
+      <ul>
+        <li><a href="">地圖</a></li>
+        <li><a href="item6.html">道具</a></li>
+        <li><a href="pet.html">寵物</a></li>
+        <li><a href="">攻略</a></li>
+        <li><a href="">技能</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="main">
+    
+  </div>
 </body>
 </html>

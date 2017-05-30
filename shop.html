@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	
+	<title>Document</title>
+</head>
+<body>
+<h1>道具</h1>
+
+<div class=""></div>
+
+
+<script type="text/javascript">
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.open("GET","xml/SHOP.XML",false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML;  
+var x=xmlDoc.getElementsByTagName("商店");
+xmlhttp.open("GET","xml/ITEM.XML",false);
+xmlhttp.send();
+xmlDoc1=xmlhttp.responseXML;	
+var x1=xmlDoc.getElementsByTagName("道具");
+xmlhttp.open("GET","xml/ITEM2.XML",false);
+xmlhttp.send();
+xmlDoc2=xmlhttp.responseXML; 
+var x2=xmlDoc.getElementsByTagName("道具");
+xmlhttp.open("GET","xml/ITEM3.XML",false);
+xmlhttp.send();
+xmlDoc3=xmlhttp.responseXML; 
+var x3=xmlDoc.getElementsByTagName("道具");
+xmlhttp.open("GET","xml/ITEM4.XML",false);
+xmlhttp.send();
+xmlDoc4=xmlhttp.responseXML; 
+var x4=xmlDoc.getElementsByTagName("道具");
+xmlhttp.open("GET","xml/ITEM5.XML",false);
+xmlhttp.send();
+xmlDoc5=xmlhttp.responseXML; 
+var x4=xmlDoc.getElementsByTagName("道具");
+xmlhttp.open("GET","xml/ITEMICON.XML",false);
+xmlhttp.send();
+xmlDocicon=xmlhttp.responseXML;	
+var y=xmlDocicon.getElementsByTagName("icon");
+document.write("<table border='1'>");
+
+
+  //document.body.appendChild(oImg);
+ function img_create(src,alt,title){
+ 	var img=new img('img');
+ 	img.src=src;
+ 	if(alt!=null) img.alt=alt;
+ 	if(title!=null) img.title=title;
+ 	return img;
+ }
+ //img_create("icon/Pet/1.bmp");
+  //img_create("icon/Pet/1.bmp","","");
+  //var img=document.createElement('img');
+  //img.src='icon/pet/1.bmp';
+  //document.getElementById('peticon_id').appendChild(img);
+//var oImg=document.createElement("img");
+//var oImg=new Image("img");
+//oImg.setAttribute('src','icon/Pet/1.bmp');
+//oImg.setAttribute('height','100');
+//oImg.setAttribute('width','100');
+//oImg.setAttribute('alt','');
+//document.body.appendChild(oImg);
+var petstr;
+var j=0;
+var i=0;
+document.write("<tr><td>");
+document.write("編號");
+document.write("</td><td>");
+document.write("原型介面");
+document.write("</td><td>");
+document.write("原型外觀");
+document.write("</td><td>");
+document.write("發光外觀");
+  document.write("</td><td>");
+document.write("原型名稱");
+  document.write("</td><td>");
+document.write("基本名稱");
+  document.write("</td><td>");
+document.write("物品類別");
+  document.write("</td><td>");
+document.write("物品等級");
+  document.write("</td><td>");
+document.write("等級限制");
+  document.write("</td><td>");
+document.write("平均攻擊");
+  document.write("</td><td>");
+document.write("攻擊變數");
+  document.write("</td><td>");
+document.write("精準");
+  document.write("</td><td>");
+document.write("火焰攻擊");
+  document.write("</td><td>");
+document.write("攻擊速度");
+  document.write("</td><td>");
+document.write("攻擊範圍");
+  document.write("</td><td>");
+document.write("耐久");
+  document.write("</td><td>");
+document.write("常駐法術");
+  document.write("</td><td>");
+document.write("重量");
+  document.write("</td><td>");
+document.write("價格");
+  document.write("</td><td>");
+document.write("動態資料2");
+  document.write("</td><td>");
+document.write("綁定次數");
+  document.write("</td><td>");
+document.write("顏色");
+  document.write("</td><td>");
+document.write("log等級");
+  document.write("</td><td>");
+document.write("說明定義");
+  document.write("</td><td>");
+document.write("右手裝備");
+  document.write("</td><td>");
+document.write("左手裝備");
+  document.write("</td><td>");
+document.write("無組合變化");
+  document.write("</td><td>");
+document.write("裝備綁定");
+  document.write("</td><td>");
+document.write("抽中廣播");
+  document.write("</td><td>");
+document.write("指定組合變化");
+  document.write("</td><td>");
+document.write("兌換廣播");
+  document.write("</td></tr>");
+
+for (i=0;i<x.length;i++)
+  {
+  
+  document.write("<tr><td>");
+  document.write(x1[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue);
+  document.write("</td><td>");
+  document.write(x1[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue);
+  document.write("</td></tr>");
+  document.write("</td></tr>");
+  }
+document.write("</table>");
+
+</script>
+<div class="res"></div>
+</body>
+</html>
